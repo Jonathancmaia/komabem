@@ -1,0 +1,1413 @@
+<!DOCTYPE HTML>
+<html lang="pt-br">
+	<head>
+		<meta charset="utf-8">
+
+		<!-- JQuery CDN -->
+		<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+		
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+		<!-- Bootstrap CDN -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+		
+		<!-- Google fonts -->
+		<link href="https://fonts.googleapis.com/css?family=Dancing+Script|PT+Sans&display=swap" rel="stylesheet">
+
+		<!-- Index style -->
+		<link rel="stylesheet" href="index.style.css">
+		<title>
+			Komabem - Bem vindo!
+		</title>
+
+		<!-- Script de suavização de scroll -->
+		<script>
+			//Função que controla as animações de scroll
+			$(window).scroll(function () {
+
+			  	//Função que altera o navbar conforme a rolagem da página
+			    if ($("#fim_painel").offset().top > $(window).scrollTop()) {
+			        $("#navbar").addClass("navbar_alto");
+			        $("#navbar").removeClass("navbar_baixo");
+			    } else {
+			       $("#navbar").addClass("navbar_baixo");
+			       $("#navbar").removeClass("navbar_alto");
+			    }
+			});
+
+			$(document).ready(function($) { 
+			    $(".scroll").click(function(event){        
+			        event.preventDefault();
+			    $('html,body').animate({scrollTop:$(this.hash).offset().top}, 600);
+			   });
+			});
+
+			if ($(window).width() < 991) {
+				$("painel_texto").removeClass("col-md-6");
+				$("painel_texto").addClass("col-12");
+			}
+
+			//Script que mostra o loading
+			$(document).ready(function() {
+				setTimeout(function(){
+					$("#loading").css("background-color", "rgb(0,0,0,0)");
+					$("#loading").css("overflow-y", "hidden");
+					setTimeout(function(){
+						$("#loading").fadeOut();
+					}, 2000);
+					$("#conteudo_site").fadeIn();
+				}, 3000);
+			});
+		</script>
+	</head>
+	<body style="background-color: black;">
+
+		<!-- Tela de loading -->
+		<div id="loading" style="width: 100%; height: 100vh; background-color: black; position: absolute; bottom: 0px; left: 0px; z-index: 100; overflow-y: scroll;">
+			<table style="width: 100%; height: 100%;">
+				<tr>
+					<td style="width: 100%; height: 100%; vertical-align: middle;">
+						<center>
+							<img src="loading.gif" width="200px">
+						</center>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+		<!-- Corpo do site -->
+		
+		<div class="container-fluid" id="conteudo_site" style="display: none;">
+			
+			<!-- Navbar -->
+			<nav class='navbar navbar-expand-lg fixed-top navbar-dark navbar_alto' id="navbar" style="z-index: 90;">
+				<a class='navbar-brand scroll' href='#secao1' style="margin-right: 20%;"><img src="logo2.png" width= "70px"></a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
+				    <span class="navbar-toggler-icon"></span>
+				</button>
+
+				<div class='collapse navbar-collapse' id='conteudoNavbarSuportado'>
+					<ul class='navbar-nav mr-auto'>
+						<li class='nav-item'>
+							<a class='nav-link scroll' href='#secao2'>Sobre nós</a>
+						</li>
+						<li class='nav-item'>
+							<a class='nav-link scroll' href='#secao3'>Onde estamos</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link scroll" href="#secao4">Nossos produtos</a>
+						</li>
+					</ul>
+				</div>
+			</nav>
+
+			<!-- Panel -->
+			<div class="row" id="secao1">
+				<div class="row" style="height: 100vh; width: 100vw;">
+					<div class="col-lg-6" id="logo_komabem">
+						<table style="height: 100%; width: 100%;">
+							<tr>
+								<td style="vertical-align: middle;">
+									<center>
+										<img src="logo_animado.gif" width="80%" />
+									</center>
+								</td>
+							</tr>
+						</table>
+					</div>
+					<div class="col-lg-6" id="painel_texto">
+						<table style="height: 100%; width: 100%;">
+							<tr>
+								<td id="descricao">
+									<center>
+										<h1 style="color: white;">
+											Restaurante à la carte<br/>
+											<center>
+												&<br/>
+											</center>
+											Alimentos congelados
+										</h1>
+										<a href="https://www.facebook.com/komabemcongelados/" target="_blank" id="link_facebook">
+											<img src="facebook.png" width="16px;" /> /komabemcongelados
+										</a>
+										<br/>
+										<br/>
+										<br/>
+										<h3 style="color: white;">
+											3297-0807 / 2501-2206<br/>
+											2137-0807 / 9 7277-0807
+										</h3>
+										<p style="background-color: white; color: #380606; margin-left:2%;">
+											<strong>
+												Entregamos em domicílio
+											</strong>
+										</p>
+										<p style="color: white;">
+											Taxa e àrea de entrega sob consulta
+										</p>
+									</center>
+								</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+				<div style='position: absolute; bottom: 50px; left: 0px; width: 100%; z-index: 99;'>
+					<center>
+						<a href="#secao2" class="scroll">
+							<img src="button.png" width="5%" id="botao_descer" style="height: 50px; width: 50px;">
+						</a>
+					</center>
+				</div>
+			</div>
+			<span id="fim_painel">
+			</span>
+
+			<!-- Secao 2 -->
+			<div class="row" id="secao2">
+				<div class='col-12' style="height: 100vh;">
+					<div class="col-12" style="font-family: 'Dancing Script', cursive; font-size: 40pt; color: white; height: 15%; padding-top: 60px;">
+						<center>
+							Sobre nós
+						</center>
+					</div>
+					<div class="row" style="height: 85%; padding-top: 60px;">
+						<div class="col-lg-8" style="color: white; height: 100%;">
+							<div style="display: table; width: 100%; height: 100%;">
+								<div style="display: table-cell; vertical-align: middle;">
+									<h2>
+										O Komabem
+									</h2>
+									Desde 1985 KomaBem Alimentos Congelados consagra sua permanência no mercado, dada a dedicação e busca pela qualidade plena no processo de fabricação, com técnicas de produção que garantem sabor aos pratos elaborados, contemplando um cardápio variado a seus clientes, aos quais nos dedicamos visando a excelência no atendimento.
+									<br/>Nossas embalagens que originariamente eram aluminizadas, foram substituídas por recipientes cartonados passíveis de utilização em fornos convencionais e elétricos, inclusive no microondas. Igualmente estão sendo apresentadas embalagens plásticas para uso exclusivo no microondas.
+									<br/>KomaBem Alimentos Congelados se orgulha de poder estar presente à mesa de seus clientes, a quem agradecemos a preferência ao longo desses anos, o que sempre nos leva a aprimorar a qualidade e eficiência de nosso trabalho em atendimento respeitoso em nosso dia a dia.
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-4" style="background-image: url('background-secao3.jpg'); background-size: cover; background-position: center center;">
+						</div>
+					</div>
+					<div style='position: absolute; bottom: 50px; left: 0px; width: 100%; z-index: 99;'>
+						<center>
+							<a href="#secao3" class="scroll">
+								<img src="button.png" width="5%" id="botao_descer" style="height: 50px; width: 50px;">
+							</a>
+						</center>
+					</div>
+				</div>
+			</div>
+
+			<!-- Secao 3 -->
+			<div class="row" id="secao3">
+				<div class='col-12' style="height: 100vh;">
+					<div class="col-12" style="font-family: 'Dancing Script', cursive; font-size: 40pt; color: white; height: 15%; padding-top: 60px;">
+						<center>
+							Onde estamos
+						</center>
+					</div>
+					<div class="row" style="height: 85%; padding-top: 60px;">
+						<div class="col-lg-4" style="background-image: url('background-secao3.jpg'); background-size: cover; background-position: center center;">
+						</div>
+						<div class="col-lg-8" style="color: white; height: 100%;">
+							<div style="display: table; width: 100%; height: 100%;">
+								<div style="display: table-cell; vertical-align: middle;">
+									<h2>
+										Localização
+									</h2>
+									Venha nos fazer uma visita e ter uma deliciosa refeição à la carte, com o especial tempero caseiro do Komabem e desfrutar de um ambiente acolhedor e despojado.<br/><br/>
+									Estamos localizados no cachambi, próximo à movimentada rua Ferreira de Andrade.<br/><br/>
+									<center>
+										<h2>
+											Rua Álvares Cabral
+										</h2>
+										<p>
+											número 580 - Cachambi
+										</p>
+										<p>
+											Rio de Janeiro - RJ
+										</p>
+									</center>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div style='position: absolute; bottom: 50px; left: 0px; width: 100%; z-index: 99;'>
+					<center>
+						<a href="#secao4" class="scroll">
+							<img src="button.png" width="5%" id="botao_descer" style="height: 50px; width: 50px;">
+						</a>
+					</center>
+				</div>
+				</div>
+			</div>
+
+			<!-- Secao 4 -->
+			<div class="row" id="secao4">
+				<div class="col-12" style="height: 100vh;">
+					<div class="col-12" style="font-family: 'Dancing Script', cursive; font-size: 40pt; color: white; height: 15%; padding-top: 60px;">
+						<center>
+							<h1>
+								Nossos produtos
+							</h1>
+						</center>
+					</div>
+					<div class="col-12">
+						<-- Abas de linhas -->
+						<ul class="nav nav-tabs" id="myTab" role="tablist" style="margin-top: 2%;">
+						  <li class="nav-item">
+						    <a class="nav-link active" id="linha1-tab" data-toggle="tab" href="#linha1" role="tab" aria-controls="linha1" aria-selected="true">Combinados komabem - Individual</a>
+						  </li>
+						  <li class="nav-item">
+						    <a class="nav-link" id="linha2-tab" data-toggle="tab" href="#linha2" role="tab" aria-controls="linha2" aria-selected="false">Linha tradicional - 2 pessoas</a>
+						  </li>
+						  <li class="nav-item">
+						    <a class="nav-link" id="linha3-tab" data-toggle="tab" href="#linha3" role="tab" aria-controls="linha3" aria-selected="false">Linha tradicional - 2 pessoas</a>
+						  </li>
+						  <li class="nav-item">
+						    <a class="nav-link" id="linha4-tab" data-toggle="tab" href="#linha4" role="tab" aria-controls="linha4" aria-selected="false">Linha Light - Individual</a>
+						  </li>
+						</ul
+
+						<!-- Tab de linhas -->
+						<div class="tab-content" id="myTabContent">
+
+							<!-- Linha 01 -->
+							<div class="tab-pane fade show active" id="linha1" role="tabpanel" aria-labelledby="home-tab">
+								<div style="height:70vh; overflow: auto; margin-top: 20px;">
+									<table class="table" style="color: white">
+									  <thead>
+									    <tr style="background-color: rgb(255,255,255,0.2); color: black;">
+									      <th scope="col">Id</th>
+									      <th scope="col">Nome</th>
+									      <th scope="col">Preço</th>
+									    </tr>
+									  </thead>
+									  <tbody>
+									  	<tr style="background-color: rgb(255,255,255,0.2); color: black;">
+									  		<td colspan=3>
+									  			<center>
+									  				<strong>
+									  					Aves
+									  				</strong>
+									  			</center>
+									  		</td>
+									  	</tr>
+									    <tr>
+									      <th scope="row">270</th>
+									      <td>Coxa e Sobrecoxa Assada com Macarrão Espaguete ao Sugo</td>
+									      <td>R$ 17,00</td>
+									    </tr>
+									    <tr style="background-color: rgb(0,0,0,0.5);">
+									      <th scope="row">237</th>
+									      <td>Empadão de Frango com Jardineira de Legumes</td>
+									      <td>R$17,00</td>
+									    </tr>
+									    <tr>
+									      <th scope="row">240</th>
+									      <td>Filé de Frango à Milanesa com Purê de Batatas</td>
+									      <td>R$17,00</td>
+									    </tr>
+									    <tr style="background-color: rgb(0,0,0,0.5);">
+									      <th scope="row">241</th>
+									      <td>Filé de Frango à Parmegiana com Purê de Batatas</td>
+									      <td>R$17,00</td>
+									    </tr>
+									    <tr>
+									      <th scope="row">239</th>
+									      <td>Filé de Frango Grelhado com Suflê de Legumes</td>
+									      <td>R$17,00</td>
+									    </tr>
+									    <tr style="background-color: rgb(0,0,0,0.5);">
+									      <th scope="row">245</th>
+									      <td>Strogonofe de Frango com Arroz</td>
+									      <td>R$00,00</td>
+									    </tr>
+									    <tr style="background-color: rgb(255,255,255,0.2); color: black;">
+									  		<td colspan=3>
+									  			<center>
+									  				<strong>
+									  					Carnes
+									  				</strong>
+									  			</center>
+									  		</td>
+									  	</tr>
+									    <tr>
+									      <th scope="row">252</th>
+									      <td>Almôndegas de Carne com Macarrão Espaguete ao Sugo</td>
+									      <td>R$17,00</td>
+									    </tr>
+									    <tr style="background-color: rgb(0,0,0,0.5);">
+									      <th scope="row">246</th>
+									      <td>Bife à Milanesa com Torta de Cebolas</td>
+									      <td>R$17,00</td>
+									    </tr>
+									    <tr>
+									      <th scope="row">247</th>
+									      <td>Bife à Parmegiana com Purê de Batatas</td>
+									      <td>R$17,00</td>
+									    </tr>
+									    <tr style="background-color: rgb(0,0,0,0.5);">
+									      <th scope="row">249</th>
+									      <td>Carne Assada Recheada (Lagarto) com Aipim Frito</td>
+									      <td>R$17,00</td>
+									    </tr>
+									    <tr>
+									      <th scope="row">251</th>
+									      <td>Carne Sêca ao Molho com Aipim Cozido</td>
+									      <td>R$17,00</td>
+									    </tr>
+									    <tr style="background-color: rgb(0,0,0,0.5);">
+									      <th scope="row">258</th>
+									      <td>Strogonoff de Carne com Arroz</td>
+									      <td>R$17,00</td>
+									    </tr>
+									    <tr style="background-color: rgb(255,255,255,0.2); color: black;">
+									  		<td colspan=3>
+									  			<center>
+									  				<strong>
+									  					Peixes
+									  				</strong>
+									  			</center>
+									  		</td>
+									  	</tr>
+									  	<tr>
+									      <th scope="row">259</th>
+									      <td>Fricassê de Bacalhau com Suflê de Brócolis</td>
+									      <td>R$21,00</td>
+									    </tr>
+									    <tr style="background-color: rgb(0,0,0,0.5);">
+									      <th scope="row">235</th>
+									      <td>Bobó de Camarão com Arroz</td>
+									      <td>R$21,00</td>
+									    </tr>
+									    <tr>
+									      <th scope="row">260</th>
+									      <td>Filé de Linguado Grelhado com Salada de Feijão Fradinho</td>
+									      <td>R$18,00</td>
+									    </tr>
+									    <tr style="background-color: rgb(0,0,0,0.5);">
+									      <th scope="row">261</th>
+									      <td>Filé de Peixe à Milanesa com Purê de Batatas</td>
+									      <td>R$18,00</td>
+									    </tr>
+									    <tr>
+									      <th scope="row">262</th>
+									      <td>Filé de Salmão Assado com Arroz de Brócolis</td>
+									      <td>R$32,00</td>
+									    </tr>
+									  </tbody>
+									</table>
+								</div>
+							</div>
+
+							<!-- Linha 02 -->
+							<div class="tab-pane fade show" id="linha2" role="tabpanel" aria-labelledby="home-tab">
+								<div style="height:70vh; overflow: auto; margin-top: 20px;">
+									<table class="table" style="color: white;">
+									  <thead>
+									    <tr style="background-color: rgb(255,255,255,0.2); color: black;">
+									      <th scope="col">Id</th>
+									      <th scope="col">Nome</th>
+									      <th scope="col">Preço</th>
+									    </tr>
+									  </thead>
+									  <tbody>
+									  	<tr style="background-color: rgb(255,255,255,0.2); color: black;">
+									  		<td colspan=3>
+									  			<center>
+									  				<strong>
+									  					Aves
+									  				</strong>
+									  			</center>
+									  		</td>
+									  	</tr>
+									    <tr>
+									      <th scope="row">001</th>
+									      <td>Almôndegas de Frango (12 unid.)</td>
+									      <td>R$ 26,00</td>
+									    </tr>
+									    <tr style="background-color: rgb(0,0,0,0.5);">
+									      <th scope="row">006</th>
+									      <td>Coxa e Sobrecoxa ensopada com ervilhas</td>
+									      <td>R$ 26,00</td>
+									    </tr>
+									    <tr>
+									      <th scope="row">007</th>
+									      <td>Empadão de Frango</td>
+									      <td>R$ 26,00</td>
+									    </tr>
+									    <tr style="background-color: rgb(0,0,0,0.5);">
+									      <th scope="row">010</th>
+									      <td>Filé de Frango à Milanesa (4 unidades)</td>
+									      <td>R$ 26,00</td>
+									    </tr>
+									    <tr>
+									      <th scope="row">014</th>
+									      <td>Frango à Jardineira (cubos de frango ensopados com vagem e cenoura)</td>
+									      <td>R$ 26,00</td>
+									    </tr>
+									    <tr style="background-color: rgb(0,0,0,0.5);">
+									      <th scope="row">016</th>
+									      <td>Frango com Quiabo (Cubos de Frango ensopados)</td>
+									      <td>R$ 26,00</td>
+									    </tr>
+									    <tr>
+									      <th scope="row">017</th>
+									      <td>Frango à Parmegiana</td>
+									      <td>R$ 28,00</td>
+									    </tr>
+									    <tr style="background-color: rgb(0,0,0,0.5);">
+									      <th scope="row">022</th>
+									      <td>Rolé de Frango com Bacon</td>
+									      <td>R$ 26,00</td>
+									    </tr>
+									    <tr>
+									      <th scope="row">003</th>
+									      <td>Rolé de Frango sem Bacon (Recheado c/Legumes)</td>
+									      <td>R$ 26,00</td>
+									    </tr>
+									    <tr style="background-color: rgb(0,0,0,0.5);">
+									      <th scope="row">023</th>
+									      <td>Strogonofe de Frango</td>
+									      <td>R$ 26,00</td>
+									    </tr>
+									    <tr style="background-color: rgb(255,255,255,0.2); color: black;">
+									  		<td colspan=3>
+									  			<center>
+									  				<strong>
+									  					Carnes
+									  				</strong>
+									  			</center>
+									  		</td>
+									  	</tr>
+									  	<tr>
+									      <th scope="row">026</th>
+									      <td>Almôndegas de Carne (12 unid.)</td>
+									      <td>R$ 29,00</td>
+									    </tr>
+									    <tr style="background-color: rgb(0,0,0,0.5);">
+									      <th scope="row">028</th>
+									      <td>Bife Grill ( à moda hamburguer)</td>
+									      <td>R$ 29,00</td>
+									    </tr>
+									    <tr>
+									      <th scope="row">029</th>
+									      <td>Bifes à Milanesa (4 unidades)</td>
+									      <td>R$ 29,00</td>
+									    </tr>
+									    <tr style="background-color: rgb(0,0,0,0.5);">
+									      <th scope="row">030</th>
+									      <td>Bifes de Caçarola</td>
+									      <td>R$ 29,00</td>
+									    </tr>
+									    <tr>
+									      <th scope="row">031</th>
+									      <td>Bifes de Contra - Filé ao Molho de Tomate, Cebola e Pimentão</td>
+									      <td>R$ 35,00</td>
+									    </tr>
+									    <tr style="background-color: rgb(0,0,0,0.5);">
+									      <th scope="row">032</th>
+									      <td>Bifes à Role</td>
+									      <td>R$ 29,00</td>
+									    </tr>
+									    <tr>
+									      <th scope="row">033</th>
+									      <td>Bolo de Batata com Carne Moída</td>
+									      <td>R$ 28,00</td>
+									    </tr>
+									    <tr style="background-color: rgb(0,0,0,0.5);">
+									      <th scope="row">034</th>
+									      <td>Carne Assada Recheada (Lagarto Redondo)</td>
+									      <td>R$ 29,00</td>
+									    </tr>
+									    <tr>
+									      <th scope="row">036</th>
+									      <td>Carne Moída Refogada</td>
+									      <td>R$ 28,00</td>
+									    </tr>
+									    <tr style="background-color: rgb(0,0,0,0.5);">
+									      <th scope="row">037</th>
+									      <td>Churrasquinho de Carne e Bacon (Contra - Filé)</td>
+									      <td>R$ 29,00</td>
+									    </tr>
+									    <tr>
+									      <th scope="row">045</th>
+									      <td>Cozido Komabem</td>
+									      <td>R$ 29,00</td>
+									    </tr>
+									    <tr style="background-color: rgb(0,0,0,0.5);">
+									      <th scope="row">038</th>
+									      <td>Escalopinho de Mignon ao Vinho</td>
+									      <td>R$ 49,00</td>
+									    </tr>
+									    <tr>
+									      <th scope="row">038</th>
+									      <td>Escalopinho de Mignon ao Vinho</td>
+									      <td>R$ 49,00</td>
+									    </tr>
+									    <tr style="background-color: rgb(0,0,0,0.5);">
+									      <th scope="row">039</th>
+									      <td>Escalopinho de Mignon com Limão</td>
+									      <td>R$ 49,00</td>
+									    </tr>
+									    <tr>
+									      <th scope="row">040</th>
+									      <td>Filé à Parmegiana</td>
+									      <td>R$ 30,00</td>
+									    </tr>
+									    <tr style="background-color: rgb(0,0,0,0.5);">
+									      <th scope="row">041</th>
+									      <td>Língua ao Molho Madeira</td>
+									      <td>R$ 28,00</td>
+									    </tr>
+									    <tr>
+									      <th scope="row">049</th>
+									      <td>Rosbeef de Filé Mignon (fatiado)</td>
+									      <td>R$ 49,00</td>
+									    </tr>
+									    <tr style="background-color: rgb(0,0,0,0.5);">
+									      <th scope="row">050</th>
+									      <td>Strogonofe de Carne (Alcatra)</td>
+									      <td>R$ 29,00</td>
+									    </tr>
+									    <tr style="background-color: rgb(255,255,255,0.2); color: black;">
+									  		<td colspan=3>
+									  			<center>
+									  				<strong>
+									  					Peixes
+									  				</strong>
+									  			</center>
+									  		</td>
+									  	</tr>
+									  	<tr>
+									      <th scope="row">069</th>
+									      <td>Bacalhau à Moda (desfiado com batata palha e ovos mexidos)</td>
+									      <td>R$ 32,00</td>
+									    </tr>
+									    <tr style="background-color: rgb(0,0,0,0.5);">
+									      <th scope="row">070</th>
+									      <td>Bacalhau Komabem (suflê c/bacalhau desfiado, mussarela, leite de côco)</td>
+									      <td>R$ 32,00</td>
+									    </tr>
+									    <tr>
+									      <th scope="row">071</th>
+									      <td>Bobó de Camarão</td>
+									      <td>R$ 38,00</td>
+									    </tr>
+									    <tr style="background-color: rgb(0,0,0,0.5);">
+									      <th scope="row">074</th>
+									      <td>Empadão de Camarão</td>
+									      <td>R$ 32,00</td>
+									    </tr>
+									    <tr>
+									      <th scope="row">075</th>
+									      <td>Filé de Peixe à Milanesa</td>
+									      <td>R$ 36,00</td>
+									    </tr>
+									    <tr style="background-color: rgb(0,0,0,0.5);">
+									      <th scope="row">076</th>
+									      <td>Filé de Peixe ao Molho de Camarão (4 unidades)</td>
+									      <td>R$ 38,00</td>
+									    </tr>
+									    <tr style="background-color: rgb(255,255,255,0.2); color: black;">
+									  		<td colspan=3>
+									  			<center>
+									  				<strong>
+									  					Típicos
+									  				</strong>
+									  			</center>
+									  		</td>
+									  	</tr>
+									  	<tr>
+									      <th scope="row">081</th>
+									      <td>Carne Sêca com Abóbora</td>
+									      <td>R$ 31,00</td>
+									    </tr>
+									    <tr style="background-color: rgb(0,0,0,0.5);">
+									      <th scope="row">083</th>
+									      <td>Dobradinha (batatas e calabresa)</td>
+									      <td>R$ 25,00</td>
+									    </tr>
+									    <tr>
+									      <th scope="row">085</th>
+									      <td>Feijoada Komabem</td>
+									      <td>R$ 30,00</td>
+									    </tr>
+									    <tr style="background-color: rgb(0,0,0,0.5);">
+									      <th scope="row">086</th>
+									      <td>Rabada com Agrião</td>
+									      <td>R$ 30,00</td>
+									    </tr>
+									    <tr style="background-color: rgb(255,255,255,0.2); color: black;">
+									  		<td colspan=3>
+									  			<center>
+									  				<strong>
+									  					Complementos e legumes
+									  				</strong>
+									  			</center>
+									  		</td>
+									  	</tr>
+									    <tr>
+									      <th scope="row">087</th>
+									      <td>Abobrinha Refogada</td>
+									      <td>R$ 15,00</td>
+									    </tr>
+									    <tr style="background-color: rgb(0,0,0,0.5);">
+									      <th scope="row">088</th>
+									      <td>Aipim ao Forno (cozido com manteiga)</td>
+									      <td>R$ 12,00</td>
+									    </tr>
+									    <tr>
+									      <th scope="row">089</th>
+									      <td>Arroz com Brócolis</td>
+									      <td>R$ 13,00</td>
+									    </tr>
+									    <tr style="background-color: rgb(0,0,0,0.5);">
+									      <th scope="row">091</th>
+									      <td>Arroz com Lentilhas</td>
+									      <td>R$ 12,00</td>
+									    </tr>
+									    <tr>
+									      <th scope="row">092</th>
+									      <td>Arroz à Piamontese (creme de leite, champignons)</td>
+									      <td>R$ 19,00</td>
+									    </tr>
+									    <tr style="background-color: rgb(0,0,0,0.5);">
+									      <th scope="row">093</th>
+									      <td>Arroz Simples</td>
+									      <td>R$ 12,00</td>
+									    </tr>
+									    <tr>
+									      <th scope="row">095</th>
+									      <td>Batata Doce Frita</td>
+									      <td>R$ 12,00</td>
+									    </tr>
+									    <tr style="background-color: rgb(0,0,0,0.5);">
+									      <th scope="row">096</th>
+									      <td>Batatas Francesas (batata palha, cebolas e presunto)</td>
+									      <td>R$ 14,00</td>
+									    </tr>
+									    <tr>
+									      <th scope="row">099</th>
+									      <td>Batatinhas Coradas</td>
+									      <td>R$ 12,00</td>
+									    </tr>
+									    <tr style="background-color: rgb(0,0,0,0.5);">
+									      <th scope="row">100</th>
+									      <td>Berinjela à Parmegiana (mussarela e molho vermelho)</td>
+									      <td>R$ 16,00</td>
+									    </tr>
+									    <tr>
+									      <th scope="row">101</th>
+									      <td>Berinjela Refogada</td>
+									      <td>R$ 12,00</td>
+									    </tr>
+									    <tr style="background-color: rgb(0,0,0,0.5);">
+									      <th scope="row">102</th>
+									      <td>Bertalha Refogada</td>
+									      <td>R$ 14,00</td>
+									    </tr>
+									    <tr>
+									      <th scope="row">103</th>
+									      <td>Brócolis ao Alho e Óleo</td>
+									      <td>R$ 15,00</td>
+									    </tr>
+									    <tr style="background-color: rgb(0,0,0,0.5);">
+									      <th scope="row">104</th>
+									      <td>Brócolis Gratinado (molho branco)</td>
+									      <td>R$ 15,00</td>
+									    </tr>
+									    <tr>
+									      <th scope="row">105</th>
+									      <td>Cenoura Refogada</td>
+									      <td>R$ 12,00</td>
+									    </tr>
+									    <tr style="background-color: rgb(0,0,0,0.5);">
+									      <th scope="row">106</th>
+									      <td>Chicória Refogada</td>
+									      <td>R$ 12,00</td>
+									    </tr>
+									    <tr>
+									      <th scope="row">107</th>
+									      <td>Couve à Mineira</td>
+									      <td>R$ 12,00</td>
+									    </tr>
+									    <tr style="background-color: rgb(0,0,0,0.5);">
+									      <th scope="row">108</th>
+									      <td>Couve-flor Gratinada (molho branco)</td>
+									      <td>R$ 17,00</td>
+									    </tr>
+									    <tr>
+									      <th scope="row">109</th>
+									      <td>Couve-flor à Milanesa</td>
+									      <td>R$ 16,00</td>
+									    </tr>
+									    <tr style="background-color: rgb(0,0,0,0.5);">
+									      <th scope="row">110</th>
+									      <td>Creme de Espinafre</td>
+									      <td>R$ 12,00</td>
+									    </tr>
+									    <tr>
+									      <th scope="row">111</th>
+									      <td>Creme de Milho</td>
+									      <td>R$ 12,00</td>
+									    </tr>
+									    <tr style="background-color: rgb(0,0,0,0.5);">
+									      <th scope="row">090</th>
+									      <td>Espinafre Refogado</td>
+									      <td>R$ 12,00</td>
+									    </tr>
+									    <tr>
+									      <th scope="row">112</th>
+									      <td>Ervilha de Folha Refogada</td>
+									      <td>R$ 15,00</td>
+									    </tr>
+									    <tr style="background-color: rgb(0,0,0,0.5);">
+									      <th scope="row">113</th>
+									      <td>Farofa Komabem</td>
+									      <td>R$ 12,00</td>
+									    </tr>
+									    <tr>
+									      <th scope="row">114</th>
+									      <td>Feijão Manteiga (Bacon e Paio)</td>
+									      <td>R$ 15,00</td>
+									    </tr>
+									    <tr style="background-color: rgb(0,0,0,0.5);">
+									      <th scope="row">115</th>
+									      <td>Feijão Preto</td>
+									      <td>R$ 13,00</td>
+									    </tr>
+									    <tr>
+									      <th scope="row">116</th>
+									      <td>Jardineira de Legumes (vagem, couve-flor e cenoura)</td>
+									      <td>R$ 13,00</td>
+									    </tr>
+									    <tr style="background-color: rgb(0,0,0,0.5);">
+									      <th scope="row">117</th>
+									      <td>Maxixe Refogado</td>
+									      <td>R$ 12,00</td>
+									    </tr>
+									    <tr>
+									      <th scope="row">094</th>
+									      <td>Mostarda Refogada</td>
+									      <td>R$ 12,00</td>
+									    </tr>
+									    <tr style="background-color: rgb(0,0,0,0.5);">
+									      <th scope="row">118</th>
+									      <td>Purê de Batatas</td>
+									      <td>R$ 13,00</td>
+									    </tr>
+									    <tr>
+									      <th scope="row">194</th>
+									      <td>Purê de Batata Baroa</td>
+									      <td>R$ 14,00</td>
+									    </tr>
+									    <tr style="background-color: rgb(0,0,0,0.5);">
+									      <th scope="row">119</th>
+									      <td>Purê de Inhame</td>
+									      <td>R$ 12,00</td>
+									    </tr>
+									    <tr>
+									      <th scope="row">120</th>
+									      <td>Quiabo Refogado</td>
+									      <td>R$ 12,00</td>
+									    </tr>
+									    <tr style="background-color: rgb(0,0,0,0.5);">
+									      <th scope="row">121</th>
+									      <td>Quibebe de Abóbora</td>
+									      <td>R$ 12,00</td>
+									    </tr>
+									    <tr>
+									      <th scope="row">122</th>
+									      <td>Repolho Refogado</td>
+									      <td>R$ 12,00</td>
+									    </tr>
+									    <tr style="background-color: rgb(0,0,0,0.5);">
+									      <th scope="row">123</th>
+									      <td>Salada de Beterraba</td>
+									      <td>R$ 12,00</td>
+									    </tr>
+									    <tr>
+									      <th scope="row">124</th>
+									      <td>Salada de Feijão Fradinho</td>
+									      <td>R$ 13,00</td>
+									    </tr>
+									    <tr style="background-color: rgb(0,0,0,0.5);">
+									      <th scope="row">125</th>
+									      <td>Sonhos de Aipim (aipim processado e frito com ovos e parmesão)</td>
+									      <td>R$ 12,00</td>
+									    </tr>
+									    <tr>
+									      <th scope="row">126</th>
+									      <td>Taioba Refogada</td>
+									      <td>R$ 12,00</td>
+									    </tr>
+									    <tr style="background-color: rgb(0,0,0,0.5);">
+									      <th scope="row">127</th>
+									      <td>Vagem Refogada</td>
+									      <td>R$ 12,00</td>
+									    </tr>
+									    <tr>
+									      <th scope="row">097</th>
+									      <td>Vagem à Parmegiana (Mussarela e molho de tomate)</td>
+									      <td>R$ 15,00</td>
+									    </tr>
+									    <tr style="background-color: rgb(255,255,255,0.2); color: black;">
+									  		<td colspan=3>
+									  			<center>
+									  				<strong>
+									  					Suflês e tortas
+									  				</strong>
+									  			</center>
+									  		</td>
+									  	</tr>
+									  	<tr>
+									      <th scope="row">129</th>
+									      <td>Suflê de Brócolis</td>
+									      <td>R$ 16,00</td>
+									    </tr>
+									    <tr style="background-color: rgb(0,0,0,0.5);">
+									      <th scope="row">130</th>
+									      <td>Suflê de Cenoura</td>
+									      <td>R$ 16,00</td>
+									    </tr>
+									    <tr>
+									      <th scope="row">131</th>
+									      <td>Suflê de Chuchu</td>
+									      <td>R$ 16,00</td>
+									    </tr>
+									    <tr style="background-color: rgb(0,0,0,0.5);">
+									      <th scope="row">132</th>
+									      <td>Suflê de Couve - Flor</td>
+									      <td>R$ 16,00</td>
+									    </tr>
+									    <tr>
+									      <th scope="row">133</th>
+									      <td>Suflê de Espinafre</td>
+									      <td>R$ 16,00</td>
+									    </tr>
+									    <tr style="background-color: rgb(0,0,0,0.5);">
+									      <th scope="row">134</th>
+									      <td>Suflê de Legumes</td>
+									      <td>R$ 16,00</td>
+									    </tr>
+									    <tr>
+									      <th scope="row">136</th>
+									      <td>Torta de Cebola e Bacon</td>
+									      <td>R$ 17,00</td>
+									    </tr>
+									    <tr style="background-color: rgb(0,0,0,0.5);">
+									      <th scope="row">138</th>
+									      <td>Torta de Palmito</td>
+									      <td>R$ 17,00</td>
+									    </tr>
+									    <tr>
+									      <th scope="row">139</th>
+									      <td>Torta de Queijo</td>
+									      <td>R$ 20,00</td>
+									    </tr>
+									    <tr style="background-color: rgb(255,255,255,0.2); color: black;">
+									  		<td colspan=3>
+									  			<center>
+									  				<strong>
+									  					Sopas
+									  				</strong>
+									  			</center>
+									  		</td>
+									  	</tr>
+									  	<tr style="background-color: rgb(0,0,0,0.5);">
+									      <th scope="row">140</th>
+									      <td>Caldo Verde (bacon e couve)</td>
+									      <td>R$ 19,00</td>
+									    </tr>
+									    <tr>
+									      <th scope="row">141</th>
+									      <td>Canja de Galinha</td>
+									      <td>R$ 19,00</td>
+									    </tr>
+									    <tr style="background-color: rgb(0,0,0,0.5);">
+									      <th scope="row">188</th>
+									      <td>Sopa de Abóbora com Palmito</td>
+									      <td>R$ 19,00</td>
+									    </tr>
+									    <tr>
+									      <th scope="row">142</th>
+									      <td>Sopa de Batata Baroa</td>
+									      <td>R$ 19,00</td>
+									    </tr>
+									    <tr style="background-color: rgb(0,0,0,0.5);">
+									      <th scope="row">143</th>
+									      <td>Sopa de Cebola</td>
+									      <td>R$ 19,00</td>
+									    </tr>
+									    <tr>
+									      <th scope="row">144</th>
+									      <td>Sopa de Ervilhas com Bacon</td>
+									      <td>R$ 19,00</td>
+									    </tr>
+									    <tr style="background-color: rgb(0,0,0,0.5);">
+									      <th scope="row">145</th>
+									      <td>Sopa de Feijão Preto (carne e legumes)</td>
+									      <td>R$ 19,00</td>
+									    </tr>
+									    <tr>
+									      <th scope="row">146</th>
+									      <td>Sopa de Legumes (com carne)</td>
+									      <td>R$ 19,00</td>
+									    </tr>
+									    <tr style="background-color: rgb(255,255,255,0.2); color: black;">
+									  		<td colspan=3>
+									  			<center>
+									  				<strong>
+									  					Salgados
+									  				</strong>
+									  			</center>
+									  		</td>
+									  	</tr>
+									  	<tr style="background-color: rgb(0,0,0,0.5);">
+									      <th scope="row">148</th>
+									      <td>Bolinhos de Aipim com Carne</td>
+									      <td>R$ 23,00</td>
+									    </tr>
+									    <tr>
+									      <th scope="row">151</th>
+									      <td>Coxinhas de Galinha</td>
+									      <td>R$ 23,00</td>
+									    </tr>
+									    <tr style="background-color: rgb(0,0,0,0.5);">
+									      <th scope="row">152</th>
+									      <td>Croquetes de Carne</td>
+									      <td>R$ 23,00</td>
+									    </tr>
+									    <tr>
+									      <th scope="row">153</th>
+									      <td>Empadinhas de Camarão</td>
+									      <td>R$ 23,00</td>
+									    </tr>
+									    <tr style="background-color: rgb(0,0,0,0.5);">
+									      <th scope="row">154</th>
+									      <td>Empadinhas de Galinha</td>
+									      <td>R$ 23,00</td>
+									    </tr>
+									    <tr>
+									      <th scope="row">155</th>
+									      <td>Empadinhas de Queijo</td>
+									      <td>R$ 23,00</td>
+									    </tr>
+									    <tr style="background-color: rgb(0,0,0,0.5);">
+									      <th scope="row">156</th>
+									      <td>Kibes</td>
+									      <td>R$ 23,00</td>
+									    </tr>
+									    <tr>
+									      <th scope="row">159</th>
+									      <td>Mini Pizzas Calabresa</td>
+									      <td>R$ 23,00</td>
+									    </tr>
+									    <tr style="background-color: rgb(0,0,0,0.5);">
+									      <th scope="row">160</th>
+									      <td>Mini Pizzas Mussarela</td>
+									      <td>R$ 23,00</td>
+									    </tr>
+									    <tr>
+									      <th scope="row">157</th>
+									      <td>Pastéis de Forno Carne</td>
+									      <td>R$ 23,00</td>
+									    </tr>
+									    <tr style="background-color: rgb(0,0,0,0.5);">
+									      <th scope="row">158</th>
+									      <td>Pastéis de Forno Frango com Catupiry</td>
+									      <td>R$ 23,00</td>
+									    </tr>
+									  </tbody>
+									</table>
+								</div>
+							</div>
+
+							<!-- Linha 3 -->
+							<div class="tab-pane fade show" id="linha3" role="tabpanel" aria-labelledby="home-tab">
+								<div style="height:70vh; overflow: auto; margin-top: 20px;">
+									<table class="table" style="color: white">
+										  <thead>
+										    <tr style="background-color: rgb(255,255,255,0.2); color: black;">
+										      <th scope="col">Id</th>
+										      <th scope="col">Nome</th>
+										      <th scope="col">Preço</th>
+										    </tr>
+										  </thead>
+										  <tbody>
+										  	<tr style="background-color: rgb(255,255,255,0.2); color: black;">
+										  		<td colspan=3>
+										  			<center>
+										  				<strong>
+										  					Aves
+										  				</strong>
+										  			</center>
+										  		</td>
+										  	</tr>
+										    <tr>
+										      <th scope="row">168</th>
+										      <td>Almôndegas de Frango (06 unidades)</td>
+										      <td>R$ 18,00</td>
+										    </tr>
+										    <tr style="background-color: rgb(0,0,0,0.5);">
+										      <th scope="row">009</th>
+										      <td>Filé de Frango Grelhado Acebolado</td>
+										      <td>R$ 18,00</td>
+										    </tr>
+										    <tr>
+										      <th scope="row">013</th>
+										      <td>Frango ao Curry e Maçã</td>
+										      <td>R$ 18,00</td>
+										    </tr>
+										    <tr style="background-color: rgb(0,0,0,0.5);">
+										      <th scope="row">173</th>
+										      <td>Frango à Parmegiana</td>
+										      <td>R$ 18,00</td>
+										    </tr>
+										    <tr>
+										      <th scope="row">018</th>
+										      <td>Fricassê de Frango (frango desfiado c/ovos mexidos e batata palha)</td>
+										      <td>R$ 18,00</td>
+										    </tr>
+										    <tr style="background-color: rgb(0,0,0,0.5);">
+										      <th scope="row">021</th>
+										      <td>Risoto de Frango</td>
+										      <td>R$ 18,00</td>
+										    </tr>
+										    <tr>
+										      <th scope="row">024</th>
+										      <td>Supremo de Frango (filé de frango empanado c/queijo e presunto)</td>
+										      <td>R$ 18,00</td>
+										    </tr>
+										    <tr style="background-color: rgb(255,255,255,0.2); color: black;">
+										  		<td colspan=3>
+										  			<center>
+										  				<strong>
+										  					Carnes
+										  				</strong>
+										  			</center>
+										  		</td>
+										  	</tr>
+										  	<tr style="background-color: rgb(0,0,0,0.5);">
+										      <th scope="row">174</th>
+										      <td>Almôndegas de Carne (06 unidades)</td>
+										      <td>R$ 18,00</td>
+										    </tr>
+										    <tr>
+										      <th scope="row">027</th>
+										      <td>Berinjela Recheada com Carne Moída</td>
+										      <td>R$ 18,00</td>
+										    </tr>
+										    <tr style="background-color: rgb(0,0,0,0.5);">
+										      <th scope="row">177</th>
+										      <td>Carne Assada Recheada (Linguíça e cenoura)</td>
+										      <td>R$ 18,00</td>
+										    </tr>
+										    <tr>
+										      <th scope="row">035</th>
+										      <td>Picadinho de Carne Ensopada com Vagem e Cenoura</td>
+										      <td>R$ 18,00</td>
+										    </tr>
+										    <tr style="background-color: rgb(0,0,0,0.5);">
+										      <th scope="row">042</th>
+										      <td>Lombinho de Porco Assado ao Molho de Limão</td>
+										      <td>R$ 18,00</td>
+										    </tr>
+										    <tr>
+										      <th scope="row">043</th>
+										      <td>Medalhões de Mignon c/Bacon ao Molho Madeira</td>
+										      <td>R$ 34,00</td>
+										    </tr>
+										    <tr style="background-color: rgb(0,0,0,0.5);">
+										      <th scope="row">046</th>
+										      <td>Pernil Assado Fatiado ao Molho</td>
+										      <td>R$ 18,00</td>
+										    </tr>
+										    <tr>
+										      <th scope="row">178</th>
+										      <td>Picadinho com Quiabo</td>
+										      <td>R$ 18,00</td>
+										    </tr>
+										    <tr style="background-color: rgb(0,0,0,0.5);">
+										      <th scope="row">047</th>
+										      <td>Pimentão Recheado com Carne Moída</td>
+										      <td>R$ 18,00</td>
+										    </tr>
+										    <tr style="background-color: rgb(255,255,255,0.2); color: black;">
+										  		<td colspan=3>
+										  			<center>
+										  				<strong>
+										  					Massas
+										  				</strong>
+										  			</center>
+										  		</td>
+										  	</tr>
+										  	<tr>
+										      <th scope="row">180</th>
+										      <td>Espaguete à Bolonhesa</td>
+										      <td>R$ 18,00</td>
+										    </tr>
+										    <tr style="background-color: rgb(0,0,0,0.5);">
+										      <th scope="row">052</th>
+										      <td>Inhoque à Bolonhesa</td>
+										      <td>R$ 18,00</td>
+										    </tr>
+										    <tr>
+										      <th scope="row">053</th>
+										      <td>Inhoque ao Molho de Quatro Queijos</td>
+										      <td>R$ 19,00</td>
+										    </tr>
+										    <tr style="background-color: rgb(0,0,0,0.5);">
+										      <th scope="row">181</th>
+										      <td>Inhoque ao Sugo (molho de tomate)</td>
+										      <td>R$ 18,00</td>
+										    </tr>
+										    <tr>
+										      <th scope="row">054</th>
+										      <td>Lasanha à Bolonhesa</td>
+										      <td>R$ 18,00</td>
+										    </tr>
+										    <tr style="background-color: rgb(0,0,0,0.5);">
+										      <th scope="row">057</th>
+										      <td>Lasanha Quatro Queijos</td>
+										      <td>R$ 19,00</td>
+										    </tr>
+										    <tr>
+										      <th scope="row">059</th>
+										      <td>Panquecas de Carne (03 unidades)</td>
+										      <td>R$ 18,00</td>
+										    </tr>
+										    <tr style="background-color: rgb(0,0,0,0.5);">
+										      <th scope="row">060</th>
+										      <td>Panquecas de Frango (03 unidades)</td>
+										      <td>R$ 18,00</td>
+										    </tr>
+										    <tr>
+										      <th scope="row">162</th>
+										      <td>Penne com Molho Branco e Espinafre</td>
+										      <td>R$ 18,00</td>
+										    </tr>
+										    <tr style="background-color: rgb(0,0,0,0.5);">
+										      <th scope="row">062</th>
+										      <td>Ravioli ao Sugo (molho tomate)</td>
+										      <td>R$ 18,00</td>
+										    </tr>
+										    <tr>
+										      <th scope="row">063</th>
+										      <td>Rondelli com Champignons (molho branco)</td>
+										      <td>R$ 18,00</td>
+										    </tr>
+										    <tr style="background-color: rgb(0,0,0,0.5);">
+										      <th scope="row">064</th>
+										      <td>Rondelli ao Sugo (molho de tomate)</td>
+										      <td>R$ 18,00</td>
+										    </tr>
+										    <tr>
+										      <th scope="row">068</th>
+										      <td>Macarrão à Parisiense (molho branco,frango desfiado, ervilha e presunto)</td>
+										      <td>R$ 19,00</td>
+										    </tr>
+										    <tr style="background-color: rgb(255,255,255,0.2); color: black;">
+										  		<td colspan=3>
+										  			<center>
+										  				<strong>
+										  					Peixes
+										  				</strong>
+										  			</center>
+										  		</td>
+										  	</tr>
+										    <tr style="background-color: rgb(0,0,0,0.5);">
+										      <th scope="row">072</th>
+										      <td>Camarão Gratinado (cremoso com queijo prato)</td>
+										      <td>R$ 30,00</td>
+										    </tr>
+										    <tr>
+										      <th scope="row">073</th>
+										      <td>Chuchu com Camarão</td>
+										      <td>R$ 24,00</td>
+										    </tr>
+										    <tr style="background-color: rgb(0,0,0,0.5);">
+										      <th scope="row">077</th>
+										      <td>Filé de Linguado à Belle Meuniere (molho de creme de leite, ovos, alcaparras)</td>
+										      <td>R$ 24,00</td>
+										    </tr>
+										    <tr>
+										      <th scope="row">191</th>
+										      <td>Filé de Peixe à Milanesa</td>
+										      <td>R$ 20,00</td>
+										    </tr>
+										    <tr style="background-color: rgb(0,0,0,0.5);">
+										      <th scope="row">078</th>
+										      <td>Risoto de Bacalhau</td>
+										      <td>R$ 22,00</td>
+										    </tr>
+										    <tr>
+										      <th scope="row">264</th>
+										      <td>Strogonoff de Camarão</td>
+										      <td>R$ 24,00</td>
+										    </tr>
+										    <tr style="background-color: rgb(255,255,255,0.2); color: black;">
+										  		<td colspan=3>
+										  			<center>
+										  				<strong>
+										  					Típicos
+										  				</strong>
+										  			</center>
+										  		</td>
+										  	</tr>
+										  	<tr style="background-color: rgb(0,0,0,0.5);">
+										      <th scope="row">082</th>
+										      <td>Carne Sêca Frita ao Molho</td>
+										      <td>R$ 24,00</td>
+										    </tr>
+										    <tr>
+										      <th scope="row">189</th>
+										      <td>Dobradinha (batatas e calabresa)</td>
+										      <td>R$ 19,00</td>
+										    </tr>
+										    <tr style="background-color: rgb(0,0,0,0.5);">
+										      <th scope="row">084</th>
+										      <td>Feijão Branco com Costela e Linguíça</td>
+										      <td>R$ 19,00</td>
+										    </tr>
+										    <tr>
+										      <th scope="row">190</th>
+										      <td>Mocotó com Feijão Branco</td>
+										      <td>R$ 19,00</td>
+										    </tr>
+										    <tr style="background-color: rgb(255,255,255,0.2); color: black;">
+										  		<td colspan=3>
+										  			<center>
+										  				<strong>
+										  					Complementos e sopas
+										  				</strong>
+										  			</center>
+										  		</td>
+										  	</tr>
+										  	<tr style="background-color: rgb(0,0,0,0.5);">
+										      <th scope="row">088</th>
+										      <td>Aipim ao Forno (cozido com manteiga)</td>
+										      <td>R$ 10,00</td>
+										    </tr>
+										    <tr>
+										      <th scope="row">089</th>
+										      <td>Arroz com Brócolis</td>
+										      <td>R$ 10,00</td>
+										    </tr>
+										    <tr style="background-color: rgb(0,0,0,0.5);">
+										      <th scope="row">091</th>
+										      <td>Arroz com Lentilhas</td>
+										      <td>R$ 10,00</td>
+										    </tr>
+										    <tr>
+										      <th scope="row">092</th>
+										      <td>Arroz à Piamontese (creme de leite, champignon)</td>
+										      <td>R$ 15,00</td>
+										    </tr>
+										    <tr style="background-color: rgb(0,0,0,0.5);">
+										      <th scope="row">093</th>
+										      <td>Arroz Simples</td>
+										      <td>R$ 10,00</td>
+										    </tr>
+										    <tr>
+										      <th scope="row">197</th>
+										      <td>Feijão Preto</td>
+										      <td>R$ 7,00</td>
+										    </tr>
+										    <tr style="background-color: rgb(0,0,0,0.5);">
+										      <th scope="row">143</th>
+										      <td>Sopa de Cebolas</td>
+										      <td>R$ 15,00</td>
+										    </tr>
+										    <tr>
+										      <th scope="row">145</th>
+										      <td>Sopa de Feijão Preto (carne e legumes)</td>
+										      <td>R$ 15,00</td>
+										    </tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+
+							<!-- Linha 4 -->
+							<div class="tab-pane fade show" id="linha4" role="tabpanel" aria-labelledby="home-tab">
+								<div style="height:70vh; overflow: auto; margin-top: 20px;">
+									<table class="table" style="color: white">
+										<tbody>
+										  <thead>
+										    <tr style="background-color: rgb(255,255,255,0.2); color: black;">
+										      <th scope="col">Id</th>
+										      <th scope="col">Nome</th>
+										      <th scope="col">Kcal</th>
+										      <th scope="col">Preço</th>
+										    </tr>
+										  </thead>
+										  <tbody>
+										  	<tr style="background-color: rgb(255,255,255,0.2); color: black;">
+										  		<td colspan="4">
+										  			<center>
+										  				<strong>
+										  					Aves
+										  				</strong>
+										  			</center>
+										  		</td>
+										  	</tr>
+										  	<tr>
+										      <th scope="row">204</th>
+										      <td>Abobrinha recheada com frango</td>
+										      <td>166</td>
+										      <td>R$20,00</td>
+										    </tr>
+										    <tr style="background-color: rgb(0,0,0,0.5);">
+										      <th scope="row">206</th>
+										      <td>Almôndegas de frango assadas ao sugo (05 unidades)</td>
+										      <td>??</td>
+										      <td>R$20,00</td>
+										    </tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- secao 5-->
+			<footer class='row' style="margin-top: 5%; background-color: white;">
+				<div class="col-12" style="font-family: 'Dancing Script', cursive; font-size: 40pt;">
+					<center>
+						Volte sempre
+					</center>
+					<hr/>
+				</div>
+				<div class="col-md-6" style="padding-bottom: 2%;">
+					<center>
+						<h3>
+							Horário de atendimento
+						</h3>
+						Segunda à sexta das 9:00 às 17:00
+						Sábado das 9:00 às 15:00 
+					</center>
+				</div>
+				<div class="col-md-6" style="padding-bottom: 2%;">
+					<center>
+						<h3>
+							Formas de pagamento
+						</h3>
+						Aceitamos cartões de crédito, débito e dinheiro.
+					</center>
+				</div>
+				<div class="col-12" style="background-color: black;">
+					<center>
+						<small style="color: white;">
+							© 2019 Copyright: Komabem | Desenvolvido por @Jonathancmaia
+						</small>
+					</center>
+				</div>
+			</footer>
+		</div>
+	</body>
+</html>

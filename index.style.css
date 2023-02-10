@@ -1,0 +1,99 @@
+a{
+	color: white;
+	transition: 0.5s;
+}
+
+a:hover{
+	color: gray;
+}
+
+.container-fluid{
+	overflow: hidden;
+	background-image: url("wood.jpg");
+	background-size: 100vw 100vh;
+}
+
+.nav-link {
+	color: gray;
+}
+
+.navbar_alto{
+	background-color: rgb(0,0,0, 0.6);
+	color: white;
+	transition: 0.5s;
+}
+
+.navbar_baixo{
+	transition: 0.3s;
+	background-color: rgb(0,0,0, 0.2);
+	color: white;
+}
+
+#botao_descer{
+	opacity: 0.5;
+	margin-bottom: 1%;
+	transition: 0.5s;
+}
+
+#botao_descer:hover{
+	margin-bottom: 0%;
+	opacity: 1.0;
+}
+
+#link_facebook:hover{
+	color: white;
+}
+
+#descricao{
+	vertical-align: middle;
+}
+
+#botao2, #botao3 {
+	bottom: 50px;
+}
+
+#facebook {
+	width: 16px;
+}
+
+/*Configuração mobile*/
+@media screen and (max-width:991px)
+{
+    #descricao {
+    	vertical-align: top;
+    }
+
+    #botao2, #botao3 {
+    	bottom: 200px;
+    }
+
+    * {
+    	font-size: 110%;
+    }
+
+    #facebook {
+    	width: 19px;
+    }
+
+
+}
+
+/*Configuração tela muito pequena*/
+@media screen and (max-height:950px) AND (max-width: 991px)
+{
+	#logo_komabem{
+		display: none;
+	}
+
+	#descricao {
+		vertical-align: middle;
+	}
+
+	* {
+    	font-size: 100%;
+    }
+
+    #botao2, #botao3 {
+		bottom: 50px;
+	}
+}
